@@ -95,7 +95,8 @@ function init() {
 
     // https://lms.aimind.co.kr/upload/2case.fbx
     // https://threejs.org/examples/models/fbx/Samba%20Dancing.fbx
-    loader.load( 'https://lms.aimind.co.kr/upload/2case.fbx', function ( object ) {
+
+    loader.load( 'http://49.247.18.139/2case.fbx', function ( object ) {
 
         mixer1 = new THREE.AnimationMixer( object );
 
