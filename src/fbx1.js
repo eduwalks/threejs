@@ -68,37 +68,38 @@ function init() {
 
     // model
     const loader = new FBXLoader();
-    // loader.load( 'assets/collection.fbx', function ( object ) {
+    loader.load( 'https://lms.aimind.co.kr/upload/4case_component.fbx', function ( object ) {
 
-    //     mixer2 = new THREE.AnimationMixer( object );
+        mixer2 = new THREE.AnimationMixer( object );
 
-    //     const action = mixer2.clipAction( object.animations[ 0 ] );
-    //     action.play();
+        const action = mixer2.clipAction( object.animations[ 0 ] );
+        action.play();
 
-    //     object.traverse( function ( child ) {
-    //         if ( child.isMesh ) {
-    //             child.castShadow = false;
-    //             child.receiveShadow = false;
-    //             child.material.opacity = 1;
-    //             child.material.transparent = true;
-    //         }
-    //     } );
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity = 1;
+                child.material.transparent = true;
+            }
+        } );
 
-    //     // object.position.set(0, 90, 90);
-    //     object.rotation.x = -89.5;
-    //     object.rotation.y = 0;
-    //     object.rotation.z = 0;
-    //     object.scale.set(2, 2, 2);
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        // object.rotation.z = 0;
+        object.rotation.z = -190.5; // 4case
+        object.scale.set(2, 2, 2);
 
-    //     scene.add( object );
-    // } );
+        scene.add( object );
+    } );
 
     //
     // https://lms.aimind.co.kr/upload/4case_body.fbx
     // https://lms.aimind.co.kr/upload/4case_component.fbx
     // https://lms.aimind.co.kr/upload/4case_opacity.fbx
 
-    loader.load( 'https://lms.aimind.co.kr/upload/4case_body.fbx', function ( object ) {
+    loader.load( 'https://lms.aimind.co.kr/upload/4case_opacity.fbx', function ( object ) {
 
         mixer1 = new THREE.AnimationMixer( object );
 
@@ -109,7 +110,7 @@ function init() {
             if ( child.isMesh ) {
                 child.castShadow = true;
                 child.receiveShadow = true;
-                child.material.opacity = 1;
+                child.material.opacity = .06;
                 child.material.transparent = true;
             }
 
