@@ -98,7 +98,7 @@ function init() {
     // https://lms.aimind.co.kr/upload/4case_component.fbx
     // https://lms.aimind.co.kr/upload/4case_opacity.fbx
 
-    loader.load( 'https://lms.aimind.co.kr/upload/4case_body.fbx', function ( object ) {
+    loader.load( 'https://lms.aimind.co.kr/upload/3case_body.fbx', function ( object ) {
 
         mixer1 = new THREE.AnimationMixer( object );
 
@@ -124,8 +124,8 @@ function init() {
         // object.position.set(-490.139, -57.571, 90);
         object.rotation.x = -89.5;
         object.rotation.y = 0;
-        // object.rotation.z = 0;
-        object.rotation.z = -190.5; // 4case
+        object.rotation.z = 0;
+        // object.rotation.z = -190.5; // 4case
         object.scale.set(2, 2, 2);
 
         // case2
