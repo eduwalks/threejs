@@ -9,6 +9,18 @@ const clock = new THREE.Clock();
 
 let mixer1;
 let mixer2;
+let mixer3;
+let mixer4;
+let mixer5;
+let mixer6;
+let mixer7;
+let mixer8;
+let mixer9;
+let mixer10;
+let mixer11;
+let mixer12;
+let mixer13;
+let mixer14;
 
 init();
 animate();
@@ -21,7 +33,8 @@ function init() {
     camera.position.set( 100, 200, 500 );
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0xa0a0a0 );
+    // scene.background = new THREE.Color( 0xa0a0a0 );
+    scene.background = new THREE.Color( 0xffffff );
     scene.fog = new THREE.Fog( 0xa0a0a0, 200, 1000 );
 
     const hemiLight = new THREE.HemisphereLight( 0xffffff, 0x000000, 2 );
@@ -41,15 +54,15 @@ function init() {
     // scene.add( new THREE.CameraHelper( dirLight.shadow.camera ) );
 
     // ground
-    const mesh = new THREE.Mesh( new THREE.PlaneGeometry( 2000, 2000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
-    mesh.rotation.x = - Math.PI / 2;
-    mesh.receiveShadow = true;
-    scene.add( mesh );
+    // const mesh = new THREE.Mesh( new THREE.PlaneGeometry( 2000, 2000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
+    // mesh.rotation.x = - Math.PI / 2;
+    // mesh.receiveShadow = true;
+    // scene.add( mesh );
 
-    const grid = new THREE.GridHelper( 2000, 20, 0x000000, 0x000000 );
-    grid.material.opacity = 0.2;
-    grid.material.transparent = true;
-    scene.add( grid );
+    // const grid = new THREE.GridHelper( 2000, 20, 0x000000, 0x000000 );
+    // grid.material.opacity = 0.2;
+    // grid.material.transparent = true;
+    // scene.add( grid );
 
     // background-image
     // var texture = new THREE.TextureLoader().load(
@@ -68,30 +81,370 @@ function init() {
 
     // model
     const loader = new FBXLoader();
-    // loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_cmotor_rotation.FBX', function ( object ) {
 
-    //     mixer2 = new THREE.AnimationMixer( object );
+    //component13
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_wmotor_rotation.FBX', function ( object ) {
 
-    //     const action = mixer2.clipAction( object.animations[ 0 ] );
-    //     action.play();
+        mixer14 = new THREE.AnimationMixer( object );
 
-    //     object.traverse( function ( child ) {
-    //         if ( child.isMesh ) {
-    //             child.castShadow = false;
-    //             child.receiveShadow = false;
-    //             child.material.opacity = 1;
-    //             child.material.transparent = true;
-    //         }
-    //     } );
+        const action = mixer14.clipAction( object.animations[ 0 ] );
+        action.play();
 
-    //     // object.position.set(0, 90, 90);
-    //     object.rotation.x = -89.5;
-    //     object.rotation.y = 0;
-    //     object.rotation.z = 0;
-    //     object.scale.set(2, 2, 2);
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity = 1;
+                child.material.transparent = true;
+            }
+        } );
 
-    //     scene.add( object );
-    // } );
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );   
+
+    //component13
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_wmotor_gear.FBX', function ( object ) {
+
+        mixer14 = new THREE.AnimationMixer( object );
+
+        const action = mixer14.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );   
+
+    //component12
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_wmotor_fix.FBX', function ( object ) {
+
+        mixer13 = new THREE.AnimationMixer( object );
+
+        const action = mixer13.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );   
+
+    //component11
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_wmotor_bearing.FBX', function ( object ) {
+
+        mixer12 = new THREE.AnimationMixer( object );
+
+        const action = mixer12.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );   
+
+    //component10
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_reducer_gear.FBX', function ( object ) {
+
+        mixer11 = new THREE.AnimationMixer( object );
+
+        const action = mixer11.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );   
+
+    //component9
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_reducer_bearing.FBX', function ( object ) {
+
+        mixer10 = new THREE.AnimationMixer( object );
+
+        const action = mixer10.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );    
+
+    //component8
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_jmotor_rotation.FBX', function ( object ) {
+
+        mixer9 = new THREE.AnimationMixer( object );
+
+        const action = mixer9.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );      
+
+    //component7
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_jmotor_gear.FBX', function ( object ) {
+
+        mixer8 = new THREE.AnimationMixer( object );
+
+        const action = mixer8.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );  
+
+    //component6
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_jmotor_fix.FBX', function ( object ) {
+
+        mixer7 = new THREE.AnimationMixer( object );
+
+        const action = mixer7.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );  
+
+    //component5
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_jmotor_bearing.FBX', function ( object ) {
+
+        mixer6 = new THREE.AnimationMixer( object );
+
+        const action = mixer6.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );  
+
+    //component4
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_cmotor_rotation.FBX', function ( object ) {
+
+        mixer5 = new THREE.AnimationMixer( object );
+
+        const action = mixer5.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );  
+
+    //component3
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_cmotor_gear.FBX', function ( object ) {
+
+        mixer4 = new THREE.AnimationMixer( object );
+
+        const action = mixer4.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );    
+    
+    //component2
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_cmotor_fix.FBX', function ( object ) {
+
+        mixer3 = new THREE.AnimationMixer( object );
+
+        const action = mixer3.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );    
+    
+    //component1
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_cmotor_bearing.FBX', function ( object ) {
+
+        mixer2 = new THREE.AnimationMixer( object );
+
+        const action = mixer2.clipAction( object.animations[ 0 ] );
+        action.play();
+
+        object.traverse( function ( child ) {
+            if ( child.isMesh ) {
+                child.castShadow = false;
+                child.receiveShadow = false;
+                child.material.opacity =  1;
+                child.material.transparent = true;
+            }
+        } );
+
+        // object.position.set(0, 90, 90);
+        object.rotation.x = -89.5;
+        object.rotation.y = 0;
+        object.rotation.z = 0;
+        object.scale.set(2, 2, 2);
+
+        scene.add( object );
+    } );
 
     //
     // https://lms.aimind.co.kr/upload/4case_body.fbx
@@ -210,6 +563,18 @@ function animate() {
 
     if ( mixer1 ) mixer1.update( delta );
     if ( mixer2 ) mixer2.update( delta );
+    if ( mixer3 ) mixer3.update( delta );
+    if ( mixer4 ) mixer4.update( delta );
+    if ( mixer5 ) mixer5.update( delta );
+    if ( mixer6 ) mixer6.update( delta );
+    if ( mixer7 ) mixer7.update( delta );
+    if ( mixer8 ) mixer8.update( delta );
+    if ( mixer9 ) mixer9.update( delta );
+    if ( mixer10 ) mixer10.update( delta );
+    if ( mixer11 ) mixer11.update( delta );
+    if ( mixer12 ) mixer12.update( delta );
+    if ( mixer13 ) mixer13.update( delta );
+    if ( mixer14 ) mixer14.update( delta );
 
     renderer.render( scene, camera );
     stats.update();
