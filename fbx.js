@@ -68,7 +68,7 @@ function init() {
 
     // model
     const loader = new FBXLoader();
-    // loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_reducer_bearing.FBX', function ( object ) {
+    // loader.load( 'https://lms.aimind.co.kr/upload/fbx/3case_reducer_bearing.FBX', function ( object ) {
 
     //     mixer2 = new THREE.AnimationMixer( object );
 
@@ -109,7 +109,7 @@ function init() {
             if ( child.isMesh ) {
                 child.castShadow = true;
                 child.receiveShadow = true;
-                child.material.opacity = 1;
+                child.material.opacity = .04;
                 child.material.transparent = true;
             }
 
