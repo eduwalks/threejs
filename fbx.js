@@ -68,7 +68,7 @@ function init() {
 
     // model
     const loader = new FBXLoader();
-    // loader.load( 'assets/collection.fbx', function ( object ) {
+    // loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_reducer_bearing.FBX', function ( object ) {
 
     //     mixer2 = new THREE.AnimationMixer( object );
 
