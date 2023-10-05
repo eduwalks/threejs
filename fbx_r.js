@@ -10,8 +10,6 @@ const clock = new THREE.Clock();
 let mixer1;
 let mixer2;
 let mixer3;
-let mixer4;
-let mixer5;
 
 init();
 animate();
@@ -72,61 +70,9 @@ function init() {
 
     // model
     const loader = new FBXLoader();
-
-    //component4
-    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_cmotor_rotation.FBX', function ( object ) {
-
-        mixer5 = new THREE.AnimationMixer( object );
-
-        const action = mixer5.clipAction( object.animations[ 0 ] );
-        action.play();
-
-        object.traverse( function ( child ) {
-            if ( child.isMesh ) {
-                child.castShadow = false;
-                child.receiveShadow = false;
-                child.material.opacity =  1;
-                child.material.transparent = true;
-            }
-        } );
-
-        // object.position.set(0, 90, 90);
-        object.rotation.x = -89.5;
-        object.rotation.y = 0;
-        object.rotation.z = 0;
-        object.scale.set(2, 2, 2);
-
-        scene.add( object );
-    } );  
-
-    //component3
-    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_cmotor_gear.FBX', function ( object ) {
-
-        mixer4 = new THREE.AnimationMixer( object );
-
-        const action = mixer4.clipAction( object.animations[ 0 ] );
-        action.play();
-
-        object.traverse( function ( child ) {
-            if ( child.isMesh ) {
-                child.castShadow = false;
-                child.receiveShadow = false;
-                child.material.opacity =  1;
-                child.material.transparent = true;
-            }
-        } );
-
-        // object.position.set(0, 90, 90);
-        object.rotation.x = -89.5;
-        object.rotation.y = 0;
-        object.rotation.z = 0;
-        object.scale.set(2, 2, 2);
-
-        scene.add( object );
-    } );    
     
     //component2
-    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_cmotor_fix.FBX', function ( object ) {
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_reducer_gear.FBX', function ( object ) {
 
         mixer3 = new THREE.AnimationMixer( object );
 
@@ -137,7 +83,7 @@ function init() {
             if ( child.isMesh ) {
                 child.castShadow = false;
                 child.receiveShadow = false;
-                child.material.opacity =  1;
+                child.material.opacity =  .6;
                 child.material.transparent = true;
             }
         } );
@@ -152,7 +98,7 @@ function init() {
     } );    
     
     //component1
-    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_cmotor_bearing.FBX', function ( object ) {
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx/3case_reducer_bearing.FBX', function ( object ) {
 
         mixer2 = new THREE.AnimationMixer( object );
 
@@ -295,8 +241,6 @@ function animate() {
     if ( mixer1 ) mixer1.update( delta );
     if ( mixer2 ) mixer2.update( delta );
     if ( mixer3 ) mixer3.update( delta );
-    if ( mixer4 ) mixer4.update( delta );
-    if ( mixer5 ) mixer5.update( delta );
 
     renderer.render( scene, camera );
     stats.update();

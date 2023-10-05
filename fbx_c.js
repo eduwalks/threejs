@@ -85,7 +85,7 @@ function init() {
             if ( child.isMesh ) {
                 child.castShadow = false;
                 child.receiveShadow = false;
-                child.material.opacity =  1;
+                child.material.opacity =  .1;
                 child.material.transparent = true;
             }
         } );
@@ -100,7 +100,7 @@ function init() {
     } );  
 
     //component3
-    loader.load( 'https://lms.aimind.co.kr/upload/fbx_n/3case_cmotor_gear.FBX', function ( object ) {
+    loader.load( 'https://lms.aimind.co.kr/upload/fbx/3case_cmotor_gear.FBX', function ( object ) {
 
         mixer4 = new THREE.AnimationMixer( object );
 
@@ -137,7 +137,7 @@ function init() {
             if ( child.isMesh ) {
                 child.castShadow = false;
                 child.receiveShadow = false;
-                child.material.opacity =  1;
+                child.material.opacity =  .1;
                 child.material.transparent = true;
             }
         } );
@@ -163,7 +163,7 @@ function init() {
             if ( child.isMesh ) {
                 child.castShadow = false;
                 child.receiveShadow = false;
-                child.material.opacity =  1;
+                child.material.opacity =  .1;
                 child.material.transparent = true;
             }
         } );
